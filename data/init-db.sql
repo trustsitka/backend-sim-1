@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS animals;
-CREATE TABLE animals (id int primary key, name text, species text);
+CREATE TABLE animals (id INTEGER primary key NOT NULL, name text, species text);
 
 INSERT INTO animals VALUES 
     (1, 'Bob', 'Llama'),

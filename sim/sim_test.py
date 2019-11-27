@@ -48,8 +48,7 @@ class SimTest(unittest.TestCase):
         response = self.do_single_request('animal/1')
         self.assertEqual(
             response,
-            {'id': 1, 'name': 'Bob', 'species': 'Llama'},
-            'Fixing this test seems like a good place to start!',
+            {'animal': [{'id': 1, 'name': 'Bob', 'species': 'Llama'}]}
         )
 
     def test_404(self):
