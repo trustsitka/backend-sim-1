@@ -63,6 +63,7 @@ class RequestHandler(BaseJSONHandler):
     def splitInputPath(self, path):
         return Path(path).parts
 
+    @jwt_required
     def get_handler_for_path(self, path):
         self.urlPath = self.splitInputPath(path)
         print("urlpath: ", self.urlPath)

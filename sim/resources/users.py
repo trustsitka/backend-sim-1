@@ -3,8 +3,8 @@ from flask_jwt_extended import (create_access_token,
                                 create_refresh_token,
                                 jwt_refresh_token_required,
                                 get_jwt_identity,
-                                fresh_jwt_required
-                                )
+                                fresh_jwt_required,
+                                jwt_required)
 
 import hashlib
 
@@ -36,7 +36,7 @@ class User(Resource):
                    "message": "User not found!"
                }, 404
 
-    @fresh_jwt_required
+    @jwt_required
     def delete(self, user_id):
         user = Users.find_user_by_id(user_id)
         if user:
