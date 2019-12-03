@@ -6,6 +6,8 @@ import re
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
 
+from flask_jwt_extended import jwt_required, fresh_jwt_required
+
 from . import db
 from ..common.config import load_config
 
@@ -63,7 +65,7 @@ class RequestHandler(BaseJSONHandler):
 
     def get_handler_for_path(self, path):
         self.urlPath = self.splitInputPath(path)
-
+        print("urlpath: ", self.urlPath)
         if path.startswith("/add/"): return self._handle_add_request
         if path.startswith("/animal/"): return self._handle_id_request
         if path.startswith("/species/"): return self._handle_species_request

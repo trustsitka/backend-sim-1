@@ -13,3 +13,15 @@ INSERT INTO animals VALUES
     (9, 'Laurel', 'Llama'),
     (10, 'David', 'Monkey')
 ;
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE `users` ( `user_id` INTEGER NOT NULL, `username` TEXT NOT NULL,
+    `password` TEXT NOT NULL, `role_id` INTEGER, `status` INTEGER, `created_date` TEXT,
+     `updated_date` TEXT, PRIMARY KEY(`user_id`) );
+
+INSERT INTO users VALUES
+(1, 'DVader','placeholder', 1, 1, datetime('now'), datetime('now')),
+(2, 'Mark','placeholder', 1, 1, datetime('now'), datetime('now')),
+(3, 'GHalleck','placeholder', 1, 1, datetime('now'), datetime('now')),
+(4, 'RLupin','placeholder', 1, 1, datetime('now'), datetime('now'))
+;
