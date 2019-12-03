@@ -4,6 +4,7 @@ from flask import Flask, jsonify
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
 
+from sim.resources.animals import Animal, AddAnimal, Species, AllAnimals
 from sim.resources.users import User, UserRegister, UserLogin
 from sim.server.db import db
 
@@ -65,7 +66,10 @@ def fresh_token_loader_callback():
 api.add_resource(User, "/user/<int:user_id>")
 api.add_resource(UserRegister, "/register")
 api.add_resource(UserLogin, "/login")
-
+api.add_resource(Animal, "/animal/<int:id>")
+api.add_resource(AddAnimal, "/add")
+api.add_resource(Species, "/species/<species>")
+api.add_resource(AllAnimals, "/animals")
 
 if __name__ == '__main__':
     # import db
